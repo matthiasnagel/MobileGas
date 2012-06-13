@@ -1,0 +1,33 @@
+{
+    "name" : "MobileTank",
+    "mode": "debug",
+    "debugLevel": 1,
+    "eliminate": false,
+    "minify": false,
+    "proxies": [
+        {
+            "baseUrl": "http://mehr-tanken.de",
+            "proxyAlias": "mehrTanken"
+        }
+    ],
+    "htmlHeader": [
+        "<meta charset=\"utf-8\">",
+        "<meta name=\"apple-mobile-web-app-capable\" content=\"yes\">",
+        "<meta name=\"apple-mobile-web-app-status-bar-style\" content=\"black\">",
+        "<link rel=\"apple-touch-icon\" sizes=\"57x57\"  href=\"theme/images/Icon.png\" />",
+        "<link rel=\"apple-touch-icon\" sizes=\"114x114\" href=\"theme/images/Icon@2x.png\" />",
+        "<link rel=\"apple-touch-icon\" href=\"theme/images/Icon-72.png\" />",
+        "<link rel=\"apple-touch-startup-image\" href=\"theme/images/Splash.png\" />",
+        "<link rel=\"apple-touch-startup-image\" href=\"theme/images/Splash@2x.png\" />"
+    ],
+    "application": {
+        "version": "0.0.1",
+        "debugMode": true,
+        "useTransitions": true,
+        "keyPrefix": "#m#",
+        "keySuffix": "_",
+        "timeStampCreated": "created_at",
+        "timeStampUpdated": "updated_at",
+        "m_id": "m_id"
+    }
+}

@@ -1,0 +1,78 @@
+[
+    {
+        "title": "Super (E10)",
+        "id": "1"
+    },
+    {
+        "title": "Super (E5)",
+        "id": "2"
+    },
+    {
+        "title": "Super Plus",
+        "id": "3"
+    },
+    {
+        "title": "Diesel",
+        "id": "4"
+    },
+    {
+        "title": "V-Power",
+        "id": "5"
+    },
+    {
+        "title": "V-Power Racing",
+        "id": "6"
+    },
+    {
+        "title": "V-Power Diesel",
+        "id": "7"
+    },
+    {
+        "title": "ultimate 102",
+        "id": "8"
+    },
+    {
+        "title": "ultimate Diesel",
+        "id": "9"
+    },
+    {
+        "title": "Bio Diesel",
+        "id": "10"
+    },
+    {
+        "title": "Super Diesel",
+        "id": "11"
+    },
+    {
+        "title": "Autogas (LPG)",
+        "id": "12"
+    },
+    {
+        "title": "Erdgas (CNG)",
+        "id": "13"
+    },
+    {
+        "title": "E85",
+        "id": "14"
+    },
+    {
+        "title": "AdBlue",
+        "id": "15"
+    },
+    {
+        "title": "LKW-Diesel",
+        "id": "17"
+    },
+    {
+        "title": "Excellium Diesel",
+        "id": "18"
+    },
+    {
+        "title": "Excellium Super Plus",
+        "id": "19"
+    },
+    {
+        "title": "MaxxMotion Diesel",
+        "id": "20"
+    }
+]
