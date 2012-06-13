@@ -2,11 +2,11 @@
 // The M-Project - Mobile HTML5 Application Framework
 // Generated with: Espresso 
 //
-// Project: MobileTank
+// Project: MobileFuel
 // Controller: SingleBrandListViewController
 // ==========================================================================
 
-MobileTank.SingleBrandListViewController = M.Controller.extend({
+MobileFuel.SingleBrandListViewController = M.Controller.extend({
 
     /* sample controller property */
     gasBrands: '',
@@ -41,7 +41,7 @@ MobileTank.SingleBrandListViewController = M.Controller.extend({
     * Function is triggered by setting target & action in a view.
     */
     brandChosen: function(itemValues, item) {
-        MobileTank.NavigationController.backToReportingPage(item);
+        MobileFuel.NavigationController.backToReportingPage(item);
     }
 
 });

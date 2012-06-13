@@ -2,11 +2,11 @@
 // The M-Project - Mobile HTML5 Application Framework
 // Generated with: Espresso 
 //
-// Project: MobileTank
+// Project: MobileFuel
 // View: HomeScreen
 // ==========================================================================
 
-MobileTank.TabBar = M.TabBarView.design({
+MobileFuel.TabBar = M.TabBarView.design({
 
     childViews: 'tab1 tab12 tab2 tab3',
 

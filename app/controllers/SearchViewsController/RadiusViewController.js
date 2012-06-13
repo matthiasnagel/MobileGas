@@ -2,11 +2,11 @@
 // The M-Project - Mobile HTML5 Application Framework
 // Generated with: Espresso 
 //
-// Project: MobileTank
+// Project: MobileFuel
 // Controller: RadiusViewController
 // ==========================================================================
 
-MobileTank.RadiusViewController = M.Controller.extend({
+MobileFuel.RadiusViewController = M.Controller.extend({
 
     
 
@@ -20,8 +20,8 @@ MobileTank.RadiusViewController = M.Controller.extend({
 
     radiusChosen:function(itemValues, items) {
         var selectionList = M.ViewManager.getView('searchRadiusView', 'selectionlist');
-        MobileTank.SearchController.suchradius.chosen = selectionList.getSelection(YES).label;
-        MobileTank.SearchController.setSearchCriteria();
+        MobileFuel.SearchController.suchradius.chosen = selectionList.getSelection(YES).label;
+        MobileFuel.SearchController.setSearchCriteria();
     },
 
     /*

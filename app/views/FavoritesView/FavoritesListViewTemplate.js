@@ -2,15 +2,15 @@
 // The M-Project - Mobile HTML5 Application Framework
 // Generated with: Espresso 
 //
-// Project: MobileTank
+// Project: MobileFuel
 // View: FavoritesListViewTemplate
 // ==========================================================================
 
-MobileTank.FavoritesListViewTemplate = M.ListItemView.design({
+MobileFuel.FavoritesListViewTemplate = M.ListItemView.design({
 
     events: {
         tap: {
-            target: MobileTank.FavoriteController,
+            target: MobileFuel.FavoriteController,
             action:'favoriteItemClicked'
         }
     },

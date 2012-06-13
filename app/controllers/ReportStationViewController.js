@@ -2,11 +2,11 @@
 // The M-Project - Mobile HTML5 Application Framework
 // Generated with: Espresso 
 //
-// Project: MobileTank
+// Project: MobileFuel
 // Controller: AddStationController
 // ==========================================================================
 
-MobileTank.ReportStationViewController = M.Controller.extend({
+MobileFuel.ReportStationViewController = M.Controller.extend({
 
     /* sample controller property */
     street: null,
@@ -144,7 +144,7 @@ MobileTank.ReportStationViewController = M.Controller.extend({
             }
         }
 
-        var reportRequestModel = MobileTank.ReportRequestModel.createRecord({
+        var reportRequestModel = MobileFuel.ReportRequestModel.createRecord({
             brandId:this.brand.value,
             street: this.street,
             zipCode: this.zipCode,
@@ -155,7 +155,7 @@ MobileTank.ReportStationViewController = M.Controller.extend({
 
 
         console.log(reportRequestModel);
-        MobileTank.RequestController.reportStation(reportRequestModel);
+        MobileFuel.RequestController.reportStation(reportRequestModel);
 
         //Object to Request function
 

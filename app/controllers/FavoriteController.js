@@ -2,17 +2,17 @@
 // The M-Project - Mobile HTML5 Application Framework
 // Generated with: Espresso 
 //
-// Project: MobileTank
+// Project: MobileFuel
 // Controller: FavoriteController
 // ==========================================================================
 
-MobileTank.FavoriteController = M.Controller.extend({
+MobileFuel.FavoriteController = M.Controller.extend({
 
     /* sample controller property */
     favorites: null,
 
     init: function(isFirstLoad) {
-        this.set('favorites', MobileTank.Station.find());
+        this.set('favorites', MobileFuel.Station.find());
     },
 
     edit: function() {
@@ -33,9 +33,9 @@ MobileTank.FavoriteController = M.Controller.extend({
             callbacks: {
                 confirm: {
                     action: function() {
-                        var record = MobileTank.Station.recordManager.getRecordById(modelId);
+                        var record = MobileFuel.Station.recordManager.getRecordById(modelId);
                         record.del();
-                        that.set('favorites', MobileTank.Station.records());
+                        that.set('favorites', MobileFuel.Station.records());
                     }
                 },
                 cancel: {
@@ -49,11 +49,11 @@ MobileTank.FavoriteController = M.Controller.extend({
     },
 
     favoriteItemClicked: function(domId, modelId) {
-        var station = MobileTank.Station.recordManager.getRecordById(modelId);
+        var station = MobileFuel.Station.recordManager.getRecordById(modelId);
 
-        MobileTank.MapController.set('station', station);
+        MobileFuel.MapController.set('station', station);
 
-        MobileTank.RequestController.getStationFuels(station.record.id);
+        MobileFuel.RequestController.getStationFuels(station.record.id);
     }
 
 });

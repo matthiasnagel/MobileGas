@@ -2,18 +2,18 @@
 // The M-Project - Mobile HTML5 Application Framework
 // Generated with: Espresso 
 //
-// Project: MobileTank
+// Project: MobileFuel
 // View: DisplayModeView
 // ==========================================================================
 
 m_require('app/views/TabBar.js');
 
-MobileTank.DisplayModeView = M.PageView.design({
+MobileFuel.DisplayModeView = M.PageView.design({
 
     /* Use the 'events' property to bind events like 'pageshow' */
     events: {
         pageshow: {
-            target: MobileTank.DisplayModeViewController,
+            target: MobileFuel.DisplayModeViewController,
             action: 'init'
         }
     },
@@ -36,7 +36,7 @@ MobileTank.DisplayModeView = M.PageView.design({
 
             events:{
                 change:{
-                    target:MobileTank.DisplayModeViewController,
+                    target:MobileFuel.DisplayModeViewController,
                     action:'displayModeChosen'
                 }
             },
@@ -53,7 +53,7 @@ MobileTank.DisplayModeView = M.PageView.design({
         })
     }),
 
-    tabBar: MobileTank.TabBar
+    tabBar: MobileFuel.TabBar
 
 });
 

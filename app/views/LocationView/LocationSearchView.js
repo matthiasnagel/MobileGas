@@ -2,18 +2,18 @@
 // The M-Project - Mobile HTML5 Application Framework
 // Generated with: Espresso 
 //
-// Project: MobileTank
+// Project: MobileFuel
 // View: LocationSearchView
 // ==========================================================================
 m_require('app/views/TabBar.js');
 m_require('app/views/SearchViews/SearchMaskListViewTemplate.js');
 
-MobileTank.LocationSearchView = M.PageView.design({
+MobileFuel.LocationSearchView = M.PageView.design({
 
     /* Use the 'events' property to bind events like 'pageshow' */
     events: {
         pageshow: {
-            target: MobileTank.MapController,
+            target: MobileFuel.MapController,
             action: 'init'
         }
     },
@@ -51,13 +51,13 @@ MobileTank.LocationSearchView = M.PageView.design({
             markerAnimationType: M.MAP_MARKER_ANIMATION_DROP,
 
             contentBinding: {
-                target: MobileTank.MapController,
+                target: MobileFuel.MapController,
                 property: 'markers'
             },
 
             events: {
                 tap: {
-                    target: MobileTank.MapController,
+                    target: MobileFuel.MapController,
                     action: 'markerClicked'
                 }
             }
@@ -65,7 +65,7 @@ MobileTank.LocationSearchView = M.PageView.design({
         })
     }),
 
-    tabBar: MobileTank.TabBar
+    tabBar: MobileFuel.TabBar
 
 });
 

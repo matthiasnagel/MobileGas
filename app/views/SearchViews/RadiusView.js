@@ -2,18 +2,18 @@
 // The M-Project - Mobile HTML5 Application Framework
 // Generated with: Espresso 
 //
-// Project: MobileTank
+// Project: MobileFuel
 // View: SearchRadiusView
 // ==========================================================================
 
 m_require('app/views/TabBar.js');
 
-MobileTank.RadiusView = M.PageView.design({
+MobileFuel.RadiusView = M.PageView.design({
 
     /* Use the 'events' property to bind events like 'pageshow' */
     events: {
         pageshow: {
-            target: MobileTank.RadiusViewController,
+            target: MobileFuel.RadiusViewController,
             action: 'init'
         }
     },
@@ -38,7 +38,7 @@ MobileTank.RadiusView = M.PageView.design({
 
             events:{
                 change:{
-                    target:MobileTank.RadiusViewController,
+                    target:MobileFuel.RadiusViewController,
                     action:'radiusChosen'
                 }
             },
@@ -67,7 +67,7 @@ MobileTank.RadiusView = M.PageView.design({
         })
     }),
     
-    tabBar: MobileTank.TabBar
+    tabBar: MobileFuel.TabBar
 
 });
 

@@ -2,11 +2,11 @@
 // The M-Project - Mobile HTML5 Application Framework
 // Generated with: Espresso 
 //
-// Project: MobileTank
+// Project: MobileFuel
 // Controller: ListItemController
 // ==========================================================================
 
-MobileTank.ListItemController = M.Controller.extend({
+MobileFuel.ListItemController = M.Controller.extend({
 
 
     searchMaskItemClicked: function(id) {
@@ -36,25 +36,25 @@ MobileTank.ListItemController = M.Controller.extend({
     },
 
     resultStationClicked:function(dom_id, station_id) {
-        _.each(MobileTank.SearchController.results, function(station) {
+        _.each(MobileFuel.SearchController.results, function(station) {
             if (station_id == station.m_id) {
 
-                MobileTank.RequestController.getStationFuels(station.record.id);
+                MobileFuel.RequestController.getStationFuels(station.record.id);
 
-                MobileTank.LocationSearchDetailController.set('fuelsList', station.record.fuel);
-                MobileTank.LocationSearchDetailController.set('stationId', station.record.id);
-                MobileTank.MapController.set('station', station);
+                MobileFuel.LocationSearchDetailController.set('fuelsList', station.record.fuel);
+                MobileFuel.LocationSearchDetailController.set('stationId', station.record.id);
+                MobileFuel.MapController.set('station', station);
                 
                 var id = station.record.brand;
                     $.getJSON('brands.json',
                         function(data) {
                             $.each(data, function(key, val) {
                                 if (val.id.toString() == id.toString()) {
-                                    MobileTank.LocationSearchDetailController.set('headerName', val.title.toString());
+                                    MobileFuel.LocationSearchDetailController.set('headerName', val.title.toString());
                                 }
                             });
                         }).success(function() {
-                            MobileTank.NavigationController.switchToLocationSearchDetailView();
+                            MobileFuel.NavigationController.switchToLocationSearchDetailView();
                         });
             }
 

@@ -2,11 +2,11 @@
 // The M-Project - Mobile HTML5 Application Framework
 // Generated with: Espresso 
 //
-// Project: MobileTank
+// Project: MobileFuel
 // Controller: ModeViewController
 // ==========================================================================
 
-MobileTank.ModeViewController = M.Controller.extend({
+MobileFuel.ModeViewController = M.Controller.extend({
 
     /* sample controller property */
     plzValue: '',
@@ -68,8 +68,8 @@ MobileTank.ModeViewController = M.Controller.extend({
                 a = '-1';
             }
         }
-        MobileTank.SearchController.suchmodus.chosen = a;
-        MobileTank.SearchController.setSearchCriteria();
+        MobileFuel.SearchController.suchmodus.chosen = a;
+        MobileFuel.SearchController.setSearchCriteria();
         history.back(-1);
     },
 
@@ -96,7 +96,7 @@ MobileTank.ModeViewController = M.Controller.extend({
             callbacks: {
                 confirm: {
                     action: function() {
-                        MobileTank.NavigationController.switchToModeView();
+                        MobileFuel.NavigationController.switchToModeView();
                     }
                 }
             }

@@ -2,31 +2,31 @@
 // The M-Project - Mobile HTML5 Application Framework
 // Generated with: Espresso 
 //
-// Project: MobileTank 
+// Project: MobileFuel
 // ==========================================================================
 
-var MobileTank  = MobileTank || {};
+var MobileFuel  = MobileFuel || {};
 
-MobileTank.app = M.Application.design({
+MobileFuel.app = M.Application.design({
 
     /* Define the entry/start page of your app. This property must be provided! */
     entryPage : 'searchView',
 
-    searchView: MobileTank.SearchView,
-    locationSearchView: MobileTank.LocationSearchView,
-    favoritesView : MobileTank.FavoritesView,
-    optionsView: MobileTank.OptionsView,
+    searchView: MobileFuel.SearchView,
+    locationSearchView: MobileFuel.LocationSearchView,
+    favoritesView : MobileFuel.FavoritesView,
+    optionsView: MobileFuel.OptionsView,
 
-    searchBrandView: MobileTank.BrandView,
-    searchFuelView: MobileTank.FuelView,
-    searchRadiusView: MobileTank.RadiusView,
-    searchModeView: MobileTank.ModeView,
-    searchDisplayModeView: MobileTank.DisplayModeView,
+    searchBrandView: MobileFuel.BrandView,
+    searchFuelView: MobileFuel.FuelView,
+    searchRadiusView: MobileFuel.RadiusView,
+    searchModeView: MobileFuel.ModeView,
+    searchDisplayModeView: MobileFuel.DisplayModeView,
 
-    locationSearchDetailView: MobileTank.LocationSearchDetailView,
-    fuelModifyView: MobileTank.FuelModifyView,
+    locationSearchDetailView: MobileFuel.LocationSearchDetailView,
+    fuelModifyView: MobileFuel.FuelModifyView,
 
-    reportingPage: MobileTank.ReportStationView,
-    singleBrandPage: MobileTank.SingleBrandListView,
-    resultsPage: MobileTank.SearchResultsView
+    reportingPage: MobileFuel.ReportStationView,
+    singleBrandPage: MobileFuel.SingleBrandListView,
+    resultsPage: MobileFuel.SearchResultsView
 });

@@ -2,11 +2,11 @@
 // The M-Project - Mobile HTML5 Application Framework
 // Generated with: Espresso 
 //
-// Project: MobileTank
+// Project: MobileFuel
 // Controller: DisplayModeViewController
 // ==========================================================================
 
-MobileTank.DisplayModeViewController = M.Controller.extend({
+MobileFuel.DisplayModeViewController = M.Controller.extend({
 
     /* sample controller property */
 
@@ -35,8 +35,8 @@ MobileTank.DisplayModeViewController = M.Controller.extend({
     displayModeChosen:function(itemValues, items) {
 
         var selectionList = M.ViewManager.getView('searchDisplayModeView', 'selectionlist');
-        MobileTank.SearchController.anzeige.chosen = selectionList.getSelection(YES).label;
-        MobileTank.SearchController.setSearchCriteria();
+        MobileFuel.SearchController.anzeige.chosen = selectionList.getSelection(YES).label;
+        MobileFuel.SearchController.setSearchCriteria();
 
     }
 

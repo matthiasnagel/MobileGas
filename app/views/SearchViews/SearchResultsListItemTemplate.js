@@ -2,18 +2,18 @@
 // The M-Project - Mobile HTML5 Application Framework
 // Generated with: Espresso 
 //
-// Project: MobileTank
+// Project: MobileFuel
 // View: SearchResultsListItemTemplate
 // ==========================================================================
 
-MobileTank.SearchResultsListItemTemplate = M.ListItemView.design({
+MobileFuel.SearchResultsListItemTemplate = M.ListItemView.design({
 
     childViews: 'stationname adress plz city',
     isSelectable: YES,
 
     events: {
         tap: {
-            target: MobileTank.ListItemController,
+            target: MobileFuel.ListItemController,
             action:'resultStationClicked'
         }
     },

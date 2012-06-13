@@ -2,11 +2,11 @@
 // The M-Project - Mobile HTML5 Application Framework
 // Generated with: Espresso 
 //
-// Project: MobileTank
+// Project: MobileFuel
 // Controller: LocationSearchDetailController
 // ==========================================================================
 
-MobileTank.LocationSearchDetailController = M.Controller.extend({
+MobileFuel.LocationSearchDetailController = M.Controller.extend({
 
     /* sample controller property */
     headerName: '',
@@ -20,11 +20,11 @@ MobileTank.LocationSearchDetailController = M.Controller.extend({
      */
     init: function(isFirstLoad) {
         if (isFirstLoad) {
-            this.set('favorites', MobileTank.Station.records());
+            this.set('favorites', MobileFuel.Station.records());
         }
         if (this.stationId) {
 
-            $.each(MobileTank.Station.find(),function(key,val){
+            $.each(MobileFuel.Station.find(),function(key,val){
                 if(this.stationId == val.record.id);{
                     //toggle favButton
                     console.log(this.stationId + val.record.id);
@@ -56,7 +56,7 @@ MobileTank.LocationSearchDetailController = M.Controller.extend({
                 function(data) {
                     $.each(data, function(key, val) {
                         if (val.id.toString() == id.toString()) {
-                            fuels.push(MobileTank.Fuel.createRecord({
+                            fuels.push(MobileFuel.Fuel.createRecord({
                                 type: val.title.toString(),
                                 currency: currency,
                                 price_current: price_current,
@@ -71,7 +71,7 @@ MobileTank.LocationSearchDetailController = M.Controller.extend({
                 });
         });
 
-        MobileTank.LocationSearchDetailController.switchToLocationSearchDetailView();
+        MobileFuel.LocationSearchDetailController.switchToLocationSearchDetailView();
     },
 
     switchToLocationSearchDetailView: function() {
@@ -79,8 +79,8 @@ MobileTank.LocationSearchDetailController = M.Controller.extend({
         var name = 'Detail';
         var that = this;
 
-        if (MobileTank.MapController.station) {
-            var id = MobileTank.MapController.station.record.brand;
+        if (MobileFuel.MapController.station) {
+            var id = MobileFuel.MapController.station.record.brand;
             $.getJSON('brands.json',
                 function(data) {
                     $.each(data, function(key, val) {
@@ -95,8 +95,8 @@ MobileTank.LocationSearchDetailController = M.Controller.extend({
     },
 
     setFavorit: function() {
-        if (MobileTank.MapController.station) {
-            MobileTank.MapController.station.save();
+        if (MobileFuel.MapController.station) {
+            MobileFuel.MapController.station.save();
         }
     }
 });

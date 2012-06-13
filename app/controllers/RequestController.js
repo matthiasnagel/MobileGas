@@ -2,11 +2,11 @@
 // The M-Project - Mobile HTML5 Application Framework
 // Generated with: Espresso 
 //
-// Project: MobileTank
+// Project: MobileFuel
 // Controller: RequestController
 // ==========================================================================
 
-MobileTank.RequestController = M.Controller.extend({
+MobileFuel.RequestController = M.Controller.extend({
 
     udid: null,
 
@@ -23,21 +23,7 @@ MobileTank.RequestController = M.Controller.extend({
 
     //Gets Cookie, Browser saves it
     getCookie: function() {
-
         this.getUdid();
-
-        M.Request.init({
-            url: '/mehrTanken/news?result=xml&lang=de&version=2.5.0&udid='
-                + this.udid[0].record.udid + '&device=iphone%20HTTP/1.1',
-            method: 'GET',
-            isJSON: NO,
-            onSuccess: function(data, msg, xhr) {
-                console.log('getCookie-Request successful');
-            },
-            onError: function(xhr, msg) {
-                console.log('Error: ' + msg);
-            }
-        }).send();
     },
 
     getStationList: function(location) {
@@ -50,7 +36,7 @@ MobileTank.RequestController = M.Controller.extend({
             isJSON: NO,
             onSuccess: function(data, msg, xhr) {
                 console.log('getStationList-Request successful');
-                MobileTank.MapController.parseXML(data);
+                MobileFuel.MapController.parseXML(data);
             },
             onError: function(xhr, msg) {
                 console.log('Error: ' + msg);
@@ -85,7 +71,7 @@ MobileTank.RequestController = M.Controller.extend({
             isJSON: NO,
             onSuccess: function(data, msg, xhr) {
                 console.log('searchStationList-Request successful call handleStation');
-                MobileTank.SearchController.handleStationList(data);
+                MobileFuel.SearchController.handleStationList(data);
             },
             onError: function(xhr, msg) {
                 console.log('Error: ' + msg);
@@ -102,7 +88,7 @@ MobileTank.RequestController = M.Controller.extend({
             isJSON: NO,
             onSuccess: function(data, msg, xhr) {
                 console.log('getStationFuels-Request successful');
-                MobileTank.LocationSearchDetailController.parseXML(data);
+                MobileFuel.LocationSearchDetailController.parseXML(data);
             },
             onError: function(xhr, msg) {
                 console.log('Error: ' + msg);
@@ -195,18 +181,50 @@ MobileTank.RequestController = M.Controller.extend({
 
     getUdid: function() {
 
-        this.set('udid', MobileTank.Udid.find());
+        this.set('udid', MobileFuel.Udid.find());
 
-        if (MobileTank.RequestController.udid.length == 0) {
+        if (MobileFuel.RequestController.udid.length == 0) {
             console.log('new udid');
-            MobileTank.Udid.createRecord({
-                udid:this.udidGenerator()
-            }).save();
 
-            this.set('udid', MobileTank.Udid.find().udid[0].record.udid);
+            var udid = this.udidGenerator();
+            var tempArray = [];
+            var udidModel = MobileFuel.Udid.createRecord({
+                udid: udid
+            });
+
+            tempArray.push(udidModel);
+            this.set('udid', tempArray);
+            udidModel.save();
+
+            M.Request.init({
+                url: '/mehrTanken/news?result=xml&lang=de&version=2.5.0&udid='
+                    + udid + '&device=iphone%20HTTP/1.1',
+                method: 'GET',
+                isJSON: NO,
+                onSuccess: function(data, msg, xhr) {
+
+                    console.log('getCookie-Request successful');
+                },
+                onError: function(xhr, msg) {
+                    this.set('udid', MobileTank.Udid.find());
+                    console.log('Error: ' + msg);
+                }
+            }).send();
         }
         else {
             console.log('old udid');
+            M.Request.init({
+                url: '/mehrTanken/news?result=xml&lang=de&version=2.5.0&udid='
+                    + this.udid[0].record.udid + '&device=iphone%20HTTP/1.1',
+                method: 'GET',
+                isJSON: NO,
+                onSuccess: function(data, msg, xhr) {
+                    console.log('getCookie-Request successful');
+                },
+                onError: function(xhr, msg) {
+                    console.log('Error: ' + msg);
+                }
+            }).send();
         }
     },
 

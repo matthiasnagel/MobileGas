@@ -2,11 +2,11 @@
 // The M-Project - Mobile HTML5 Application Framework
 // Generated with: Espresso 
 //
-// Project: MobileTank
+// Project: MobileFuel
 // Controller: FuelViewController
 // ==========================================================================
 
-MobileTank.FuelViewController = M.Controller.extend({
+MobileFuel.FuelViewController = M.Controller.extend({
 
     fuels: null,
 
@@ -70,8 +70,8 @@ MobileTank.FuelViewController = M.Controller.extend({
         _.each(array,function(selection){
             results.push(selection.label);
         })
-        MobileTank.SearchController.spritarten.chosen = results;
-        MobileTank.SearchController.setSearchCriteria();
+        MobileFuel.SearchController.spritarten.chosen = results;
+        MobileFuel.SearchController.setSearchCriteria();
     }
 
 });

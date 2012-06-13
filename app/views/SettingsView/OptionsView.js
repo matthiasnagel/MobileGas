@@ -2,16 +2,16 @@
 // The M-Project - Mobile HTML5 Application Framework
 // Generated with: Espresso 
 //
-// Project: MobileTank
+// Project: MobileFuel
 // View: OptionsView
 // ==========================================================================
 m_require('app/views/TabBar.js');
-MobileTank.OptionsView = M.PageView.design({
+MobileFuel.OptionsView = M.PageView.design({
 
     /* Use the 'events' property to bind events like 'pageshow' */
     events: {
         pageshow: {
-            target: MobileTank.MyController,
+            target: MobileFuel.MyController,
             action: 'init'
         }
     },
@@ -31,14 +31,14 @@ MobileTank.OptionsView = M.PageView.design({
             value: 'Tankstelle melden',
             events:{
                 tap:{
-                    target: MobileTank.NavigationController,
+                    target: MobileFuel.NavigationController,
                     action: 'switchToReportingPage'
                 }
             }
         })
     }),
 
-    tabBar: MobileTank.TabBar
+    tabBar: MobileFuel.TabBar
 
 });
 

@@ -2,11 +2,11 @@
 // The M-Project - Mobile HTML5 Application Framework
 // Generated with: Espresso 
 //
-// Project: MobileTank
+// Project: MobileFuel
 // Model: Fuel
 // ==========================================================================
 
-MobileTank.Fuel = M.Model.create({
+MobileFuel.Fuel = M.Model.create({
 
     /* Define the name of your model. Do not delete this property! */
     __name__: 'Fuel',

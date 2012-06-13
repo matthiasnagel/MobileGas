@@ -2,18 +2,18 @@
 // The M-Project - Mobile HTML5 Application Framework
 // Generated with: Espresso 
 //
-// Project: MobileTank
+// Project: MobileFuel
 // View: FavoritesView
 // ==========================================================================
 m_require('app/views/TabBar.js');
 m_require('app/views/FavoritesView/FavoritesListViewTemplate.js');
 
-MobileTank.FavoritesView = M.PageView.design({
+MobileFuel.FavoritesView = M.PageView.design({
 
     /* Use the 'events' property to bind events like 'pageshow' */
     events: {
         pageshow: {
-            target: MobileTank.FavoriteController,
+            target: MobileFuel.FavoriteController,
             action: 'init'
         }
     },
@@ -38,7 +38,7 @@ MobileTank.FavoritesView = M.PageView.design({
                 icon: 'gear',
                 events: {
                     tap: {
-                        target: MobileTank.FavoriteController,
+                        target: MobileFuel.FavoriteController,
                         action: 'edit'
                     }
                 }
@@ -49,7 +49,7 @@ MobileTank.FavoritesView = M.PageView.design({
                 icon: 'check',
                 events: {
                     tap: {
-                        target: MobileTank.FavoriteController,
+                        target: MobileFuel.FavoriteController,
                         action: 'edit'
                     }
                 }
@@ -65,16 +65,16 @@ MobileTank.FavoritesView = M.PageView.design({
     content: M.ScrollView.design({
         childViews: 'stationList',
         stationList: M.ListView.design({
-            listItemTemplateView:MobileTank.FavoritesListViewTemplate,
+            listItemTemplateView:MobileFuel.FavoritesListViewTemplate,
             contentBinding: {
-                target: MobileTank.FavoriteController,
+                target: MobileFuel.FavoriteController,
                 property: 'favorites'
             }
 
         })
     }),
 
-    tabBar: MobileTank.TabBar
+    tabBar: MobileFuel.TabBar
 
 });
 

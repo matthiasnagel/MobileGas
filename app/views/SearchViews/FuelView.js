@@ -2,18 +2,18 @@
 // The M-Project - Mobile HTML5 Application Framework
 // Generated with: Espresso 
 //
-// Project: MobileTank
+// Project: MobileFuel
 // View: FuelView
 // ==========================================================================
 
 m_require('app/views/TabBar.js');
 
-MobileTank.FuelView = M.PageView.design({
+MobileFuel.FuelView = M.PageView.design({
 
     /* Use the 'events' property to bind events like 'pageshow' */
     events: {
         pageshow: {
-            target: MobileTank.FuelViewController,
+            target: MobileFuel.FuelViewController,
             action: 'init'
         }
     },
@@ -34,13 +34,13 @@ MobileTank.FuelView = M.PageView.design({
             selectionMode: M.MULTIPLE_SELECTION,
 
             contentBinding:{
-                target: MobileTank.FuelViewController,
+                target: MobileFuel.FuelViewController,
                 property: 'fuels'
             },
 
             events:{
                 change:{
-                    target:MobileTank.FuelViewController,
+                    target:MobileFuel.FuelViewController,
                     action:'fuelChosen'
                 }
             }
@@ -48,7 +48,7 @@ MobileTank.FuelView = M.PageView.design({
         })
     }),
 
-    tabBar: MobileTank.TabBar
+    tabBar: MobileFuel.TabBar
 
 });
 

@@ -2,18 +2,18 @@
 // The M-Project - Mobile HTML5 Application Framework
 // Generated with: Espresso 
 //
-// Project: MobileTank
+// Project: MobileFuel
 // View: SearchModeView
 // ==========================================================================
 
 m_require('app/views/TabBar.js');
 
-MobileTank.ModeView = M.PageView.design({
+MobileFuel.ModeView = M.PageView.design({
 
     /* Use the 'events' property to bind events like 'pageshow' */
     events: {
         pageshow: {
-            target: MobileTank.ModeViewController,
+            target: MobileFuel.ModeViewController,
             action: 'init'
         }
     },
@@ -34,7 +34,7 @@ MobileTank.ModeView = M.PageView.design({
             internalEvents: {
                 tap: {
                     action: function() {
-                        MobileTank.ModeViewController.goBackToSearchView();
+                        MobileFuel.ModeViewController.goBackToSearchView();
                     }
                 }
             }
@@ -58,7 +58,7 @@ MobileTank.ModeView = M.PageView.design({
             value:'in der aktuellen Umgebung',
             events:{
                 tap:{
-                    target:MobileTank.ModeViewController,
+                    target:MobileFuel.ModeViewController,
                     action:'currentLocation'
                 }
             }
@@ -71,7 +71,7 @@ MobileTank.ModeView = M.PageView.design({
         textfield:M.TextFieldView.design({
             label: 'PLZ: ',
             contentBindingReverse:{
-                target:MobileTank.ModeViewController,
+                target:MobileFuel.ModeViewController,
                 property:'plzValue'
             }
         }),
@@ -80,7 +80,7 @@ MobileTank.ModeView = M.PageView.design({
             value:'Ok',
             events:{
                 tap:{
-                    target:MobileTank.ModeViewController,
+                    target:MobileFuel.ModeViewController,
                     action:'viaPlz'
                 }
             }
@@ -88,7 +88,7 @@ MobileTank.ModeView = M.PageView.design({
 
     }),
 
-    tabBar: MobileTank.TabBar
+    tabBar: MobileFuel.TabBar
 
 });
 
