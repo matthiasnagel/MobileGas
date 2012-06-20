@@ -63,10 +63,26 @@ MobileFuel.ModeViewController = M.Controller.extend({
         }
         else {
             if (this.plzValue) {
-                a = 'Postleitzahl: '+ this.plzValue;
+                a = 'Postleitzahl: ' + this.plzValue;
             } else {
-                a = '-1';
+                a = -1;
             }
+        }
+
+        if(a == -1){
+            M.DialogView.alert({
+                    title: 'Meldung!',
+                    message: 'Bitte Position oder PLZ angeben.',
+                    confirmButtonValue: 'Ok',
+                    callbacks: {
+                        confirm: {
+                            action: function() {
+                                console.log("ok");
+                            }
+                        }
+                    }
+                });
+                return;
         }
         MobileFuel.SearchController.suchmodus.chosen = a;
         MobileFuel.SearchController.setSearchCriteria();
@@ -105,7 +121,7 @@ MobileFuel.ModeViewController = M.Controller.extend({
 
 
 
-    changeListItemText:function(text){
+    changeListItemText:function(text) {
 
         //var listItem = M.ViewManager.getView('searchView','');
         //listItem.blalbalba = text;

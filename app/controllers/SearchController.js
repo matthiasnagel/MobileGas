@@ -36,6 +36,8 @@ MobileFuel.SearchController = M.Controller.extend({
 
             MobileFuel.BrandViewController.init();
             MobileFuel.FuelViewController.init();
+
+
             
             this.marken = {id:'0',name:'Marken',chosen:'Alle'};
 
@@ -51,9 +53,14 @@ MobileFuel.SearchController = M.Controller.extend({
             var that = this;
             $.each(MobileFuel.SearchRequestModel.find(),function(key,val){
                 previousSearchModel = val;
+                if(previousSearchModel.record.brands){
+                    
+                }
                 that.marken.chosen = previousSearchModel.record.brands;
                 that.spritarten.chosen = previousSearchModel.record.fuels;
-                that.suchradius.chosen = previousSearchModel.record.radius;
+
+                that.suchradius.chosen = previousSearchModel.record.radius + " km";
+
                 if(previousSearchModel.record.zipcode == -1){
                     console.log("-1");
                     that.suchmodus.chosen = "Via GPS";
@@ -61,8 +68,15 @@ MobileFuel.SearchController = M.Controller.extend({
                     console.log("zipcode");
                     that.suchmodus.chosen = previousSearchModel.record.zipcode;
                 }
+
+
+                if(previousSearchModel.record.displayMode == 0){
+                    that.anzeige.chosen = "Alle";
+                }else{
+                    console.log("zipcode");
+                    that.anzeige.chosen = "Nur mit Preis";
+                }
                 
-                that.anzeige.chosen = previousSearchModel.record.displayMode;
             });
 
 
@@ -107,7 +121,21 @@ MobileFuel.SearchController = M.Controller.extend({
                val.del();
                 console.log("gelöscht");
             });
-            searchRequest.save();console.log("erstellt");
+
+            brands = MobileFuel.BrandViewController.getSelectionNames();
+            fuels = MobileFuel.FuelViewController.getSelectionNames();
+
+            var searchRequestSave = MobileFuel.SearchRequestModel.createRecord({
+                brands:brands,
+                fuels:fuels,
+                radius:radius,
+                displayMode: displayMode,
+                location:mode[0],
+                zipcode:mode[1]
+            });
+
+            searchRequestSave.save();
+            console.log(searchRequestSave);
             MobileFuel.RequestController.searchStationList(searchRequest);
         }
         else {

@@ -47,6 +47,23 @@ MobileFuel.FuelViewController = M.Controller.extend({
 
 
     },
+    getSelectionNames:function() {
+        var selectionList = M.ViewManager.getView('searchFuelView', 'fuelSelection');
+        var selection = selectionList.getSelection(YES);
+        if (selection.length == 0) {
+            return 'Alle';//alle kraftstoffe einbauen
+        } else {
+            var array=[] ;
+            for (var i in selection) {
+                //string += selection[i].label + ';';
+
+                array.push({value:selection[i].value,name:selection[i].label});
+            }
+            return array;//(string.substr(0, string.length - 1));
+        }
+
+
+    },
     alertMethod:function() {
         M.DialogView.alert({
             title: 'Fehler',
