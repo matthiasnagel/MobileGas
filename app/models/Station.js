@@ -19,6 +19,9 @@ MobileFuel.Station = M.Model.create({
     brand: M.Model.attr('Integer', {
     }),
 
+    brandName: M.Model.attr('String', {
+    }),
+
     selfreport: M.Model.attr('Integer', {
     }),
 

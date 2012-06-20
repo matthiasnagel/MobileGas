@@ -19,47 +19,37 @@ MobileFuel.SearchResultsListItemTemplate = M.ListItemView.design({
     },
 
     stationname: M.LabelView.design({
-        computedValue: {
-            valuePattern: '<%= stationname %>',
-            operation: function(v) {
-                var n = '';
-                if(v==null){
-                    n='Kein Name vorhanden';
-                }
-                else{
-                    n=v;
-                }
-                return 'Name: ' + n;
-            }
-        }
-
+        valuePattern: '<%= brandName %>'
     }),
 
     adress: M.LabelView.design({
         computedValue: {
             valuePattern: '<%= adress %>',
             operation: function(v) {
-                return 'Adresse: ' + v;
+                return v;
             }
-        }
+        },
+        cssClass:'searchAdress'
     }),
 
     plz:M.LabelView.design({
         computedValue: {
             valuePattern: '<%= plz %>',
             operation: function(v) {
-                return 'PLZ: ' + v;
+                return v;
             }
-        }
+        },
+        cssClass:'searchPlz'
     }),
 
     city:M.LabelView.design({
         computedValue: {
             valuePattern: '<%= city %>',
             operation: function(v) {
-                return 'Ort: ' + v;
+                return v;
             }
-        }
+        },
+        cssClass:'searchCity'
     })
 });
 

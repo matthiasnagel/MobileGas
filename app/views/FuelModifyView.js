@@ -55,16 +55,22 @@ MobileFuel.FuelModifyView = M.PageView.design({
     }),
 
     content: M.ScrollView.design({
-        childViews: 'label1 label2 textfield',
+        childViews: 'label1 label2 label3 textfield',
         label1: M.LabelView.design({
-            value: 'Hier kannst du den Preis für folgende Spritart ändern:'
+            value: 'Preis für ',
+            cssClass:'fuelModifyText1'
         }),
         label2: M.LabelView.design({
             contentBinding: {
                 target: MobileFuel.FuelModifyController,
                 property: 'fuelString'
             },
-            value: 'Sprit'
+            value: 'Sprit',
+            cssClass:'fuelModifyType'
+        }),
+        label3: M.LabelView.design({
+            value: ' ändern:',
+            cssClass:'fuelModifyText2'
         }),
         textfield: M.TextFieldView.design({
             contentBinding: {
@@ -75,7 +81,8 @@ MobileFuel.FuelModifyView = M.PageView.design({
                 target:MobileFuel.FuelModifyController,
                 property:'fuelPrice'
             },
-            initialText: 'Aktueller Preis'
+            initialText: 'Aktueller Preis',
+            cssClass:'fuelModifyInput'
         })
     }),
 

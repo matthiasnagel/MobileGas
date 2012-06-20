@@ -22,16 +22,16 @@ MobileFuel.LocationSearchDetailController = M.Controller.extend({
         if (isFirstLoad) {
             this.set('favorites', MobileFuel.Station.records());
         }
-        var fav = M.ViewManager.getView('locationSearchDetailView','favButton');
-        $("#"+fav.id+"").show();
+        var fav = M.ViewManager.getView('locationSearchDetailView', 'favButton');
+        $("#" + fav.id + "").show();
 
         if (this.stationId) {
             var that = this;
-            $.each(MobileFuel.Station.find(),function(key,val){
-                console.log(that.stationId + '' +val.record.id);
-                if(that.stationId === val.record.id){
-                    console.log(that.stationId + '' +val.record.id);
-                    $("#"+fav.id+"").hide();
+            $.each(MobileFuel.Station.find(), function(key, val) {
+                console.log(that.stationId + '' + val.record.id);
+                if (that.stationId === val.record.id) {
+                    console.log(that.stationId + '' + val.record.id);
+                    $("#" + fav.id + "").hide();
                 }
             });
         }

@@ -15,22 +15,36 @@ MobileFuel.LocationSearchDetailListViewTemplate = M.ListItemView.design({
         }
     },
 
-    childViews: 'type price_current currency update',
- 
+    childViews: 'type price_current currency updateText update',
+
     type: M.LabelView.design({
-      valuePattern: '<%= type %>'
+        computedValue: {
+            valuePattern: '<%= type %>',
+            operation: function(v) {
+                return v + ':';
+            }
+        },
+        cssClass: 'fuelType'
     }),
 
     price_current: M.LabelView.design({
-      valuePattern: '<%= price_current %>'
+        valuePattern: '<%= price_current %>',
+        cssClass: 'price_current'
     }),
 
     currency: M.LabelView.design({
-      valuePattern: '<%= currency %>'
+        valuePattern: '<%= currency %>',
+        cssClass: 'currency'
+    }),
+
+    updateText: M.LabelView.design({
+        value: 'Aktuallisiert: ',
+        cssClass: 'updateText'
     }),
 
     update: M.LabelView.design({
-      valuePattern: '<%= update %>'
+        valuePattern: '<%= update %>',
+        cssClass: 'update'
     })
 });
 

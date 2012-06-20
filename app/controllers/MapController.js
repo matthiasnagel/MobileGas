@@ -82,6 +82,7 @@ MobileFuel.MapController = M.Controller.extend({
             locations.push(M.MapMarkerView.init({
                 location: M.Location.init(parseFloat(station.record.latitude),parseFloat(station.record.longitude)),
                 map: map,
+                icon: 'theme/images/marker.png',
                 data: station
             }))
         });

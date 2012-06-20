@@ -38,49 +38,47 @@ MobileFuel.SearchController = M.Controller.extend({
             MobileFuel.FuelViewController.init();
 
 
-            
-            this.marken = {id:'0',name:'Marken',chosen:'Alle'};
+            this.marken = {id:'0',name:'Marken:',chosen:'Alle'};
 
-            this.spritarten = {id:'1',name:'Spritarten', chosen:'Alle'};
+            this.spritarten = {id:'1',name:'Spritarten:', chosen:'Alle'};
 
-            this.suchradius = {id:'2',name:'Suchradius',chosen:'5km'};
+            this.suchradius = {id:'2',name:'Suchradius:',chosen:'5km'};
 
-            this.suchmodus = {id:'3',name:'Suchmodus',chosen:'Position oder PLZ'};
+            this.suchmodus = {id:'3',name:'Suchmodus:',chosen:'Position oder PLZ'};
 
-            this.anzeige = {id:'4',name:'Anzeige',chosen:'Alle'};
-            
+            this.anzeige = {id:'4',name:'Anzeige:',chosen:'Alle'};
+
             var previousSearchModel;
             var that = this;
-            $.each(MobileFuel.SearchRequestModel.find(),function(key,val){
+            $.each(MobileFuel.SearchRequestModel.find(), function(key, val) {
                 previousSearchModel = val;
-                if(previousSearchModel.record.brands){
-                    
+                if (previousSearchModel.record.brands) {
+
                 }
                 that.marken.chosen = previousSearchModel.record.brands;
                 that.spritarten.chosen = previousSearchModel.record.fuels;
 
                 that.suchradius.chosen = previousSearchModel.record.radius + " km";
 
-                if(previousSearchModel.record.zipcode == -1){
+                if (previousSearchModel.record.zipcode == -1) {
                     console.log("-1");
                     that.suchmodus.chosen = "Via GPS";
-                }else{
+                } else {
                     console.log("zipcode");
                     that.suchmodus.chosen = previousSearchModel.record.zipcode;
                 }
 
 
-                if(previousSearchModel.record.displayMode == 0){
+                if (previousSearchModel.record.displayMode == 0) {
                     that.anzeige.chosen = "Alle";
-                }else{
+                } else {
                     console.log("zipcode");
                     that.anzeige.chosen = "Nur mit Preis";
                 }
-                
+
             });
 
 
-            
         }
 
         this.setSearchCriteria();
@@ -108,7 +106,6 @@ MobileFuel.SearchController = M.Controller.extend({
             var mode = MobileFuel.ModeViewController.getSelection();
 
 
-            
             var searchRequest = MobileFuel.SearchRequestModel.createRecord({
                 brands:brands,
                 fuels:fuels,
@@ -117,8 +114,8 @@ MobileFuel.SearchController = M.Controller.extend({
                 location:mode[0],
                 zipcode:mode[1]
             });
-            $.each(MobileFuel.SearchRequestModel.find(),function(key,val){
-               val.del();
+            $.each(MobileFuel.SearchRequestModel.find(), function(key, val) {
+                val.del();
                 console.log("gelöscht");
             });
 
@@ -186,43 +183,54 @@ MobileFuel.SearchController = M.Controller.extend({
         $xml.find('station').each(function() {
             //$station = $(this).find('station');
             //console.log($station.find('stationname').text());
-            stations.push(MobileFuel.Station.createRecord({
-                id:$(this).attr('id'),
-                brand:$(this).attr('brand'),
-                stationname:$(this).find('stationname').text(),
-                country:$(this).find('country').text(),
-                adress:$(this).find('adress').text(),
-                plz:$(this).find('plz').text(),
-                city:$(this).find('city').text(),
-                latitude:$(this).find('coordinates').attr('lat'),
-                longitude:$(this).find('coordinates').attr('lon'),
-                fuel:MobileFuel.Fuel.createRecord({
-                    type: $(this).find('fuel').attr('type'),
-                    currency:$(this).find('fuel').attr('currency'),
-                    price_current:$(this).find('fuel').attr('price_current'),
-                    update:$(this).find('fuel').attr('update')
-                })
-            }));
 
-        });
-        console.log(stations);
-
-        if (stations.length == 0) {
-            M.DialogView.alert({
-                title: 'Fehler',
-                message: 'Keine Tankstellen gefunden.',
-                confirmButtonValue: 'Ok',
-                callbacks: {
-                    confirm: {
-                        action: function() {
+            var that = $(this);
+            $.getJSON('brands.json',
+                function(data) {
+                    $.each(data, function(key, val) {
+                        if (val.id.toString() == that.attr('brand')) {
+                            stations.push(MobileFuel.Station.createRecord({
+                                id:that.attr('id'),
+                                brand:that.attr('brand'),
+                                brandName:val.title.toString(),
+                                stationname:that.find('stationname').text(),
+                                country:that.find('country').text(),
+                                adress:that.find('adress').text(),
+                                plz:that.find('plz').text(),
+                                city:that.find('city').text(),
+                                latitude:that.find('coordinates').attr('lat'),
+                                longitude:that.find('coordinates').attr('lon'),
+                                fuel:MobileFuel.Fuel.createRecord({
+                                    type: that.find('fuel').attr('type'),
+                                    currency:that.find('fuel').attr('currency'),
+                                    price_current:that.find('fuel').attr('price_current'),
+                                    update:that.find('fuel').attr('update')
+                                })
+                            }));
                         }
-                    }
-                }
-            });
-        } else {
-            this.set('results', stations);
-            MobileFuel.NavigationController.switchToResultsView();
-        }
+                    });
+                });
+        })
 
-    }
+
+        //Methode muss auf success warten - robin
+            if (stations.length == 0) {
+                        M.DialogView.alert({
+                            title: 'Fehler',
+                            message: 'Keine Tankstellen gefunden.',
+                            confirmButtonValue: 'Ok',
+                            callbacks: {
+                                confirm: {
+                                    action: function() {
+                                    }
+                                }
+                            }
+                        });
+                    } else {
+                        this.set('results', stations);
+                        MobileFuel.NavigationController.switchToResultsView();
+                    }
+        }
+    
+
 });
