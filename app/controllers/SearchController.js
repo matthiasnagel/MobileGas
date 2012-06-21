@@ -52,15 +52,35 @@ MobileFuel.SearchController = M.Controller.extend({
             var that = this;
             $.each(MobileFuel.SearchRequestModel.find(), function(key, val) {
                 previousSearchModel = val;
+
                 if (previousSearchModel.record.brands) {
                     var string = '';
-                    $.each(previousSearchModel.record.brands,function(brand){
-                        string += brand.label;
+                    console.log(previousSearchModel.record.brands[0].name);
+                    _.each(previousSearchModel.record.brands,function(brand){
+                        console.log(brand.name);
+                        string += brand.name+';';
 
                     })
+                    string = string.substring(0,string.length-1);
+                    if(string.length > 30){
+                        string = string.substring(0,30)+';...';
+                    }
+                    that.marken.chosen = string;
                 }
-                that.marken.chosen = previousSearchModel.record.brands;
-                that.spritarten.chosen = previousSearchModel.record.fuels;
+
+                if (previousSearchModel.record.fuels) {
+                    var string = '';
+                    _.each(previousSearchModel.record.fuels,function(fuel){
+                        console.log(fuel);
+                        string += fuel.name+';';
+
+                    })
+                    string = string.substring(0,string.length-1);
+                    if(string.length > 30){
+                        string = string.substring(0,30)+';...';
+                    }
+                    that.spritarten.chosen = string;
+                }
 
                 that.suchradius.chosen = previousSearchModel.record.radius + " km";
 
@@ -188,44 +208,53 @@ MobileFuel.SearchController = M.Controller.extend({
             //$station = $(this).find('station');
             //console.log($station.find('stationname').text());
 
-            stations.push(MobileFuel.Station.createRecord({
-                id:$(this).attr('id'),
-                brand:$(this).attr('brand'),
-                stationname:$(this).find('stationname').text(),
-                country:$(this).find('country').text(),
-                adress:$(this).find('adress').text(),
-                plz:$(this).find('plz').text(),
-                city:$(this).find('city').text(),
-                latitude:$(this).find('coordinates').attr('lat'),
-                longitude:$(this).find('coordinates').attr('lon'),
-                fuel:MobileFuel.Fuel.createRecord({
-                    type: $(this).find('fuel').attr('type'),
-                    currency:$(this).find('fuel').attr('currency'),
-                    price_current:$(this).find('fuel').attr('price_current'),
-                    update:$(this).find('fuel').attr('update')
-                })
-            }));
-
-        });
-
-        if (stations.length == 0) {
-            M.DialogView.alert({
-                title: 'Fehler',
-                message: 'Keine Tankstellen gefunden.',
-                confirmButtonValue: 'Ok',
-                callbacks: {
-                    confirm: {
-                        action: function() {
+            var that = $(this);
+            $.getJSON('brands.json',
+                function(data) {
+                    $.each(data, function(key, val) {
+                        if (val.id.toString() == that.attr('brand')) {
+                            stations.push(MobileFuel.Station.createRecord({
+                                id:that.attr('id'),
+                                brand:that.attr('brand'),
+                                brandName:val.title.toString(),
+                                stationname:that.find('stationname').text(),
+                                country:that.find('country').text(),
+                                adress:that.find('adress').text(),
+                                plz:that.find('plz').text(),
+                                city:that.find('city').text(),
+                                latitude:that.find('coordinates').attr('lat'),
+                                longitude:that.find('coordinates').attr('lon'),
+                                fuel:MobileFuel.Fuel.createRecord({
+                                    type: that.find('fuel').attr('type'),
+                                    currency:that.find('fuel').attr('currency'),
+                                    price_current:that.find('fuel').attr('price_current'),
+                                    update:that.find('fuel').attr('update')
+                                })
+                            }));
                         }
+                    });
+                });
+        })
+
+
+        //Methode muss auf success warten - robin
+            if (stations.length == 0) {
+                        M.DialogView.alert({
+                            title: 'Fehler',
+                            message: 'Keine Tankstellen gefunden.',
+                            confirmButtonValue: 'Ok',
+                            callbacks: {
+                                confirm: {
+                                    action: function() {
+                                    }
+                                }
+                            }
+                        });
+                    } else {
+                        this.set('results', stations);
+                        MobileFuel.NavigationController.switchToResultsView();
                     }
-                }
-            });
-        } else {
-            this.set('results', stations);
-            MobileFuel.NavigationController.switchToResultsView();
         }
-
-    }
-
+    
 
 });
