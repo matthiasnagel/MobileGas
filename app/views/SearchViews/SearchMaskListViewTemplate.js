@@ -1,8 +1,8 @@
-MobileFuel.SearchMaskListViewTemplate = M.ListItemView.design({
+MobileGas.SearchMaskListViewTemplate = M.ListItemView.design({
     childViews: 'name chosen',
     events: {
         tap: {
-            target: MobileFuel.ListItemController,
+            target: MobileGas.ListItemController,
             action:'searchMaskItemClicked'
         }
     },

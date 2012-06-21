@@ -2,11 +2,11 @@
 // The M-Project - Mobile HTML5 Application Framework
 // Generated with: Espresso 
 //
-// Project: MobileFuel
+// Project: MobileGas
 // View: HomeScreen
 // ==========================================================================
 
-MobileFuel.TabBar = M.TabBarView.design({
+MobileGas.TabBar = M.TabBarView.design({
 
     childViews: 'tab1 tab12 tab2 tab3',
 
@@ -15,6 +15,7 @@ MobileFuel.TabBar = M.TabBarView.design({
     tab1: M.TabBarItemView.design({
 
         value: 'Suche',
+        icon: 'search',
         page: 'searchView'
 
     }),
@@ -22,6 +23,7 @@ MobileFuel.TabBar = M.TabBarView.design({
     tab12: M.TabBarItemView.design({
 
         value: 'Umkreissuche',
+        icon: 'location',
         page: 'locationSearchView'
 
     }),
@@ -29,6 +31,7 @@ MobileFuel.TabBar = M.TabBarView.design({
     tab2: M.TabBarItemView.design({
 
         value: 'Favoriten',
+        icon: 'favorit',
         page: 'favoritesView'
 
     }),
@@ -36,6 +39,7 @@ MobileFuel.TabBar = M.TabBarView.design({
     tab3: M.TabBarItemView.design({
 
         value: 'Einstellungen',
+        icon: 'settings',
         page: 'optionsView'
 
     })

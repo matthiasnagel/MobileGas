@@ -2,11 +2,11 @@
 // The M-Project - Mobile HTML5 Application Framework
 // Generated with: Espresso 
 //
-// Project: MobileFuel
+// Project: MobileGas
 // Controller: NavigationController
 // ==========================================================================
 
-MobileFuel.NavigationController = M.Controller.extend({
+MobileGas.NavigationController = M.Controller.extend({
 
     /* sample controller property */
     myControllerProperty: '',
@@ -29,7 +29,7 @@ MobileFuel.NavigationController = M.Controller.extend({
     backToReportingPage: function(item) {
         /* switch to a page called 'examplePage' */
         var label = M.ViewManager.getView('reportingPage','label');
-        MobileFuel.ReportStationViewController.set('brand',item);
+        MobileGas.ReportStationViewController.set('brand',item);
         history.back(-1);
 
     },

@@ -2,11 +2,11 @@
 // The M-Project - Mobile HTML5 Application Framework
 // Generated with: Espresso 
 //
-// Project: MobileFuel
+// Project: MobileGas
 // Controller: LocationSearchDetailController
 // ==========================================================================
 
-MobileFuel.LocationSearchDetailController = M.Controller.extend({
+MobileGas.LocationSearchDetailController = M.Controller.extend({
 
     /* sample controller property */
     headerName: '',
@@ -20,14 +20,14 @@ MobileFuel.LocationSearchDetailController = M.Controller.extend({
      */
     init: function(isFirstLoad) {
         if (isFirstLoad) {
-            this.set('favorites', MobileFuel.Station.records());
+            this.set('favorites', MobileGas.Station.records());
         }
         var fav = M.ViewManager.getView('locationSearchDetailView', 'favButton');
         $("#" + fav.id + "").show();
 
         if (this.stationId) {
             var that = this;
-            $.each(MobileFuel.Station.find(), function(key, val) {
+            $.each(MobileGas.Station.find(), function(key, val) {
                 console.log(that.stationId + '' + val.record.id);
                 if (that.stationId === val.record.id) {
                     console.log(that.stationId + '' + val.record.id);
@@ -57,7 +57,7 @@ MobileFuel.LocationSearchDetailController = M.Controller.extend({
                 function(data) {
                     $.each(data, function(key, val) {
                         if (val.id.toString() == id.toString()) {
-                            fuels.push(MobileFuel.Fuel.createRecord({
+                            fuels.push(MobileGas.Fuel.createRecord({
                                 type: val.title.toString(),
                                 currency: currency,
                                 price_current: price_current,
@@ -72,7 +72,7 @@ MobileFuel.LocationSearchDetailController = M.Controller.extend({
                 });
         });
 
-        MobileFuel.LocationSearchDetailController.switchToLocationSearchDetailView();
+        MobileGas.LocationSearchDetailController.switchToLocationSearchDetailView();
     },
 
     switchToLocationSearchDetailView: function() {
@@ -80,8 +80,8 @@ MobileFuel.LocationSearchDetailController = M.Controller.extend({
         var name = 'Detail';
         var that = this;
 
-        if (MobileFuel.MapController.station) {
-            var id = MobileFuel.MapController.station.record.brand;
+        if (MobileGas.MapController.station) {
+            var id = MobileGas.MapController.station.record.brand;
             $.getJSON('brands.json',
                 function(data) {
                     $.each(data, function(key, val) {
@@ -96,8 +96,8 @@ MobileFuel.LocationSearchDetailController = M.Controller.extend({
     },
 
     setFavorit: function() {
-        if (MobileFuel.MapController.station) {
-            MobileFuel.MapController.station.save();
+        if (MobileGas.MapController.station) {
+            MobileGas.MapController.station.save();
         }
     }
 });

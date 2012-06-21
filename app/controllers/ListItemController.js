@@ -2,11 +2,11 @@
 // The M-Project - Mobile HTML5 Application Framework
 // Generated with: Espresso 
 //
-// Project: MobileFuel
+// Project: MobileGas
 // Controller: ListItemController
 // ==========================================================================
 
-MobileFuel.ListItemController = M.Controller.extend({
+MobileGas.ListItemController = M.Controller.extend({
 
 
     searchMaskItemClicked: function(id) {
@@ -36,25 +36,25 @@ MobileFuel.ListItemController = M.Controller.extend({
     },
 
     resultStationClicked:function(dom_id, station_id) {
-        _.each(MobileFuel.SearchController.results, function(station) {
+        _.each(MobileGas.SearchController.results, function(station) {
             if (station_id == station.m_id) {
 
-                MobileFuel.RequestController.getStationFuels(station.record.id);
+                MobileGas.RequestController.getStationFuels(station.record.id);
 
-                MobileFuel.LocationSearchDetailController.set('fuelsList', station.record.fuel);
-                MobileFuel.LocationSearchDetailController.set('stationId', station.record.id);
-                MobileFuel.MapController.set('station', station);
+                MobileGas.LocationSearchDetailController.set('fuelsList', station.record.fuel);
+                MobileGas.LocationSearchDetailController.set('stationId', station.record.id);
+                MobileGas.MapController.set('station', station);
                 
                 var id = station.record.brand;
                     $.getJSON('brands.json',
                         function(data) {
                             $.each(data, function(key, val) {
                                 if (val.id.toString() == id.toString()) {
-                                    MobileFuel.LocationSearchDetailController.set('headerName', val.title.toString());
+                                    MobileGas.LocationSearchDetailController.set('headerName', val.title.toString());
                                 }
                             });
                         }).success(function() {
-                            MobileFuel.NavigationController.switchToLocationSearchDetailView();
+                            MobileGas.NavigationController.switchToLocationSearchDetailView();
                         });
             }
 

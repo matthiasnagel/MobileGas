@@ -2,11 +2,11 @@
 // The M-Project - Mobile HTML5 Application Framework
 // Generated with: Espresso 
 //
-// Project: MobileFuel
+// Project: MobileGas
 // Controller: FuelModifyController
 // ==========================================================================
 
-MobileFuel.FuelModifyController = M.Controller.extend({
+MobileGas.FuelModifyController = M.Controller.extend({
 
     /* sample controller property */
     myControllerProperty: '',
@@ -34,21 +34,21 @@ MobileFuel.FuelModifyController = M.Controller.extend({
 
         var that = this;
 
-        _.each(MobileFuel.LocationSearchDetailController.fuelsList, function(fuel) {
+        _.each(MobileGas.LocationSearchDetailController.fuelsList, function(fuel) {
             if (fuel_id == fuel.m_id) {
 
                 that.set('fuelId', fuel.record.id);
                 that.set('fuelPrice', fuel.record.price_current);
                 that.set('fuelString', fuel.record.type);
                 
-                MobileFuel.NavigationController.switchToFuelModifyView();
+                MobileGas.NavigationController.switchToFuelModifyView();
             }
 
         })
     },
 
     save: function(){
-        MobileFuel.RequestController.saveNewPrice(this.fuelId, MobileFuel.LocationSearchDetailController.stationId, this.fuelPrice);
+        MobileGas.RequestController.saveNewPrice(this.fuelId, MobileGas.LocationSearchDetailController.stationId, this.fuelPrice);
     }
 
 });

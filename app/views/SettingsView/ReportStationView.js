@@ -2,16 +2,16 @@
 // The M-Project - Mobile HTML5 Application Framework
 // Generated with: Espresso 
 //
-// Project: MobileFuel
+// Project: MobileGas
 // View: addStation
 // ==========================================================================
 m_require('app/views/TabBar.js');
-MobileFuel.ReportStationView = M.PageView.design({
+MobileGas.ReportStationView = M.PageView.design({
 
     /* Use the 'events' property to bind events like 'pageshow' */
     events: {
         pageshow: {
-            target: MobileFuel.ReportStationViewController,
+            target: MobileGas.ReportStationViewController,
             action: 'init'
         }
     },
@@ -39,7 +39,7 @@ MobileFuel.ReportStationView = M.PageView.design({
                 value: 'Marke:',
                 events:{
                     tap:{
-                        target:MobileFuel.NavigationController,
+                        target:MobileGas.NavigationController,
                         action:'switchToSingleBrandPage'
                     }
                 }
@@ -49,7 +49,7 @@ MobileFuel.ReportStationView = M.PageView.design({
                 value:'Bitte Wählen',
                 computedValue:{
                     contentBinding: {
-                        target: MobileFuel.ReportStationViewController,
+                        target: MobileGas.ReportStationViewController,
                         property: 'brand'
                     },
                     value:'Bitte Wählen',
@@ -76,7 +76,7 @@ MobileFuel.ReportStationView = M.PageView.design({
             /* add event listener for the 'change' event */
             events: {
                 change: {
-                    target: MobileFuel.ReportStationViewController,
+                    target: MobileGas.ReportStationViewController,
                     action: 'toggleGPS'
                 }
             },
@@ -97,21 +97,21 @@ MobileFuel.ReportStationView = M.PageView.design({
         streetTextField: M.TextFieldView.design({
             label:'Straße:',
             contentBindingReverse:{
-                target:MobileFuel.ReportStationViewController,
+                target:MobileGas.ReportStationViewController,
                 property:'street'
             }
         }),
         zipCodeTextfield: M.TextFieldView.design({
             label:'PLZ:',
             contentBindingReverse:{
-                target:MobileFuel.ReportStationViewController,
+                target:MobileGas.ReportStationViewController,
                 property:'zipCode'
             }
         }),
         cityTextField: M.TextFieldView.design({
             label:'Ort:',
             contentBindingReverse:{
-                target:MobileFuel.ReportStationViewController,
+                target:MobileGas.ReportStationViewController,
                 property:'city'
             }
         }),
@@ -119,7 +119,7 @@ MobileFuel.ReportStationView = M.PageView.design({
             value:'Tankstelle speichern',
             events:{
                 tap:{
-                    target:MobileFuel.ReportStationViewController,
+                    target:MobileGas.ReportStationViewController,
                     action:'addStationToApi'
                 }
             }
@@ -127,7 +127,7 @@ MobileFuel.ReportStationView = M.PageView.design({
 
     }),
 
-    tabBar: MobileFuel.TabBar
+    tabBar: MobileGas.TabBar
 
 });
 

@@ -2,18 +2,18 @@
 // The M-Project - Mobile HTML5 Application Framework
 // Generated with: Espresso 
 //
-// Project: MobileFuel
+// Project: MobileGas
 // View: SingleBrandListView
 // ==========================================================================
 
 m_require('app/views/TabBar.js');
 
-MobileFuel.SingleBrandListView = M.PageView.design({
+MobileGas.SingleBrandListView = M.PageView.design({
 
     /* Use the 'events' property to bind events like 'pageshow' */
     events: {
         pageshow: {
-            target: MobileFuel.SingleBrandListViewController,
+            target: MobileGas.SingleBrandListViewController,
             action: 'init'
         }
     },
@@ -33,19 +33,19 @@ MobileFuel.SingleBrandListView = M.PageView.design({
             selectionMode: M.SINGLE_SELECTION,
 
             contentBinding:{
-                target: MobileFuel.SingleBrandListViewController,
+                target: MobileGas.SingleBrandListViewController,
                 property: 'gasBrands'
             },
 
             events:{
                 change:{
-                    target:MobileFuel.SingleBrandListViewController,
+                    target:MobileGas.SingleBrandListViewController,
                     action:'brandChosen'
                 }
             }
         })
     }),
 
-    tabBar: MobileFuel.TabBar
+    tabBar: MobileGas.TabBar
 });
 

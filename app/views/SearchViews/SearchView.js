@@ -2,18 +2,18 @@
 // The M-Project - Mobile HTML5 Application Framework
 // Generated with: Espresso 
 //
-// Project: MobileFuel
+// Project: MobileGas
 // View: SearchViews
 // ==========================================================================
 m_require('app/views/TabBar.js');
 m_require('app/views/SearchViews/SearchMaskListViewTemplate.js');
 
-MobileFuel.SearchView = M.PageView.design({
+MobileGas.SearchView = M.PageView.design({
 
     /* Use the 'events' property to bind events like 'pageshow' */
     events: {
         pageshow: {
-            target: MobileFuel.SearchController,
+            target: MobileGas.SearchController,
             action: 'init'
         }
     },
@@ -33,9 +33,9 @@ MobileFuel.SearchView = M.PageView.design({
         cssClass:'searchView',
 
         listSearch: M.ListView.design({
-            listItemTemplateView:MobileFuel.SearchMaskListViewTemplate,
+            listItemTemplateView:MobileGas.SearchMaskListViewTemplate,
             contentBinding: {
-                target: MobileFuel.SearchController,
+                target: MobileGas.SearchController,
                 property: 'searchCriteria'
             }
 
@@ -45,7 +45,7 @@ MobileFuel.SearchView = M.PageView.design({
             value:'Suchen',
             events:{
                 tap:{
-                    target: MobileFuel.SearchController,
+                    target: MobileGas.SearchController,
                     action: 'aggregateSearchInformation'
                 }
             }
@@ -54,7 +54,7 @@ MobileFuel.SearchView = M.PageView.design({
 
     }),
 
-    tabBar: MobileFuel.TabBar
+    tabBar: MobileGas.TabBar
 
 });
 

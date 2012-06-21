@@ -2,11 +2,11 @@
 // The M-Project - Mobile HTML5 Application Framework
 // Generated with: Espresso 
 //
-// Project: MobileFuel
+// Project: MobileGas
 // Controller: BrandViewController
 // ==========================================================================
 
-MobileFuel.BrandViewController = M.Controller.extend({
+MobileGas.BrandViewController = M.Controller.extend({
 
 
     gasBrands: null,
@@ -117,8 +117,8 @@ MobileFuel.BrandViewController = M.Controller.extend({
         _.each(array, function(selection) {
             results.push(selection.label);
         })
-        MobileFuel.SearchController.marken.chosen = results;
-        MobileFuel.SearchController.setSearchCriteria();
+        MobileGas.SearchController.marken.chosen = results;
+        MobileGas.SearchController.setSearchCriteria();
     },
     alertMethod:function() {
         M.DialogView.alert({

@@ -2,16 +2,16 @@
 // The M-Project - Mobile HTML5 Application Framework
 // Generated with: Espresso 
 //
-// Project: MobileFuel
+// Project: MobileGas
 // View: FuelModifyView
 // ==========================================================================
 m_require('app/views/TabBar.js');
 
-MobileFuel.FuelModifyView = M.PageView.design({
+MobileGas.FuelModifyView = M.PageView.design({
 
     events: {
         pageshow: {
-            target: MobileFuel.FuelModifyController,
+            target: MobileGas.FuelModifyController,
             action: 'init'
         }
     },
@@ -30,7 +30,7 @@ MobileFuel.FuelModifyView = M.PageView.design({
             events: {
                 tap: {
                     action: function() {
-                        MobileFuel.FuelModifyController.save();
+                        MobileGas.FuelModifyController.save();
                     }
                 }
             }
@@ -62,7 +62,7 @@ MobileFuel.FuelModifyView = M.PageView.design({
         }),
         label2: M.LabelView.design({
             contentBinding: {
-                target: MobileFuel.FuelModifyController,
+                target: MobileGas.FuelModifyController,
                 property: 'fuelString'
             },
             value: 'Sprit',
@@ -74,11 +74,11 @@ MobileFuel.FuelModifyView = M.PageView.design({
         }),
         textfield: M.TextFieldView.design({
             contentBinding: {
-                target: MobileFuel.FuelModifyController,
+                target: MobileGas.FuelModifyController,
                 property: 'fuelPrice'
             },
             contentBindingReverse:{
-                target:MobileFuel.FuelModifyController,
+                target:MobileGas.FuelModifyController,
                 property:'fuelPrice'
             },
             initialText: 'Aktueller Preis',
@@ -86,7 +86,7 @@ MobileFuel.FuelModifyView = M.PageView.design({
         })
     }),
 
-    tabBar: MobileFuel.TabBar
+    tabBar: MobileGas.TabBar
 
 });
 

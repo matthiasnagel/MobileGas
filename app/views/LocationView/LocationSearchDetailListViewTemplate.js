@@ -2,15 +2,15 @@
 // The M-Project - Mobile HTML5 Application Framework
 // Generated with: Espresso 
 //
-// Project: MobileFuel
+// Project: MobileGas
 // View: LocationSearchDetailListViewTemplate
 // ==========================================================================
 
-MobileFuel.LocationSearchDetailListViewTemplate = M.ListItemView.design({
+MobileGas.LocationSearchDetailListViewTemplate = M.ListItemView.design({
 
     events: {
         tap: {
-            target: MobileFuel.FuelModifyController,
+            target: MobileGas.FuelModifyController,
             action:'fuelItemClicked'
         }
     },

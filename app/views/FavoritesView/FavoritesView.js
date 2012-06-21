@@ -2,18 +2,18 @@
 // The M-Project - Mobile HTML5 Application Framework
 // Generated with: Espresso 
 //
-// Project: MobileFuel
+// Project: MobileGas
 // View: FavoritesView
 // ==========================================================================
 m_require('app/views/TabBar.js');
 m_require('app/views/FavoritesView/FavoritesListViewTemplate.js');
 
-MobileFuel.FavoritesView = M.PageView.design({
+MobileGas.FavoritesView = M.PageView.design({
 
     /* Use the 'events' property to bind events like 'pageshow' */
     events: {
         pageshow: {
-            target: MobileFuel.FavoriteController,
+            target: MobileGas.FavoriteController,
             action: 'init'
         }
     },
@@ -38,7 +38,7 @@ MobileFuel.FavoritesView = M.PageView.design({
                 icon: 'gear',
                 events: {
                     tap: {
-                        target: MobileFuel.FavoriteController,
+                        target: MobileGas.FavoriteController,
                         action: 'edit'
                     }
                 }
@@ -49,7 +49,7 @@ MobileFuel.FavoritesView = M.PageView.design({
                 icon: 'check',
                 events: {
                     tap: {
-                        target: MobileFuel.FavoriteController,
+                        target: MobileGas.FavoriteController,
                         action: 'edit'
                     }
                 }
@@ -65,16 +65,16 @@ MobileFuel.FavoritesView = M.PageView.design({
     content: M.ScrollView.design({
         childViews: 'stationList',
         stationList: M.ListView.design({
-            listItemTemplateView:MobileFuel.FavoritesListViewTemplate,
+            listItemTemplateView:MobileGas.FavoritesListViewTemplate,
             contentBinding: {
-                target: MobileFuel.FavoriteController,
+                target: MobileGas.FavoriteController,
                 property: 'favorites'
             }
 
         })
     }),
 
-    tabBar: MobileFuel.TabBar
+    tabBar: MobileGas.TabBar
 
 });
 

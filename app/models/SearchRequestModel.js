@@ -2,11 +2,11 @@
 // The M-Project - Mobile HTML5 Application Framework
 // Generated with: Espresso 
 //
-// Project: MobileFuel
+// Project: MobileGas
 // Model: SearchRequestModel
 // ==========================================================================
 
-MobileFuel.SearchRequestModel = M.Model.create({
+MobileGas.SearchRequestModel = M.Model.create({
 
     /* Define the name of your model. Do not delete this property! */
     __name__: 'SearchRequestModel',

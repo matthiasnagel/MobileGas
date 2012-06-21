@@ -2,18 +2,18 @@
 // The M-Project - Mobile HTML5 Application Framework
 // Generated with: Espresso 
 //
-// Project: MobileFuel
+// Project: MobileGas
 // View: SearchModeView
 // ==========================================================================
 
 m_require('app/views/TabBar.js');
 
-MobileFuel.ModeView = M.PageView.design({
+MobileGas.ModeView = M.PageView.design({
 
     /* Use the 'events' property to bind events like 'pageshow' */
     events: {
         pageshow: {
-            target: MobileFuel.ModeViewController,
+            target: MobileGas.ModeViewController,
             action: 'init'
         }
     },
@@ -34,7 +34,7 @@ MobileFuel.ModeView = M.PageView.design({
             internalEvents: {
                 tap: {
                     action: function() {
-                        MobileFuel.ModeViewController.goBackToSearchView();
+                        MobileGas.ModeViewController.goBackToSearchView();
                     }
                 }
             }
@@ -58,7 +58,7 @@ MobileFuel.ModeView = M.PageView.design({
             value:'in der aktuellen Umgebung',
             events:{
                 tap:{
-                    target:MobileFuel.ModeViewController,
+                    target:MobileGas.ModeViewController,
                     action:'currentLocation'
                 }
             }
@@ -71,7 +71,7 @@ MobileFuel.ModeView = M.PageView.design({
         textfield:M.TextFieldView.design({
             label: 'PLZ: ',
             contentBindingReverse:{
-                target:MobileFuel.ModeViewController,
+                target:MobileGas.ModeViewController,
                 property:'plzValue'
             }
         }),
@@ -80,7 +80,7 @@ MobileFuel.ModeView = M.PageView.design({
             value:'Ok',
             events:{
                 tap:{
-                    target:MobileFuel.ModeViewController,
+                    target:MobileGas.ModeViewController,
                     action:'viaPlz'
                 }
             }
@@ -88,7 +88,7 @@ MobileFuel.ModeView = M.PageView.design({
 
     }),
 
-    tabBar: MobileFuel.TabBar
+    tabBar: MobileGas.TabBar
 
 });
 

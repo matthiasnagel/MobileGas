@@ -2,11 +2,11 @@
 // The M-Project - Mobile HTML5 Application Framework
 // Generated with: Espresso 
 //
-// Project: MobileFuel
+// Project: MobileGas
 // Controller: RequestController
 // ==========================================================================
 
-MobileFuel.RequestController = M.Controller.extend({
+MobileGas.RequestController = M.Controller.extend({
 
     udid: null,
 
@@ -36,7 +36,7 @@ MobileFuel.RequestController = M.Controller.extend({
             isJSON: NO,
             onSuccess: function(data, msg, xhr) {
                 console.log('getStationList-Request successful');
-                MobileFuel.MapController.parseXML(data);
+                MobileGas.MapController.parseXML(data);
             },
             onError: function(xhr, msg) {
                 console.log('Error: ' + msg);
@@ -71,7 +71,7 @@ MobileFuel.RequestController = M.Controller.extend({
             isJSON: NO,
             onSuccess: function(data, msg, xhr) {
                 console.log('searchStationList-Request successful call handleStation');
-                MobileFuel.SearchController.handleStationList(data);
+                MobileGas.SearchController.handleStationList(data);
             },
             onError: function(xhr, msg) {
                 console.log('Error: ' + msg);
@@ -88,7 +88,7 @@ MobileFuel.RequestController = M.Controller.extend({
             isJSON: NO,
             onSuccess: function(data, msg, xhr) {
                 console.log('getStationFuels-Request successful');
-                MobileFuel.LocationSearchDetailController.parseXML(data);
+                MobileGas.LocationSearchDetailController.parseXML(data);
             },
             onError: function(xhr, msg) {
                 console.log('Error: ' + msg);
@@ -181,14 +181,14 @@ MobileFuel.RequestController = M.Controller.extend({
 
     getUdid: function() {
 
-        this.set('udid', MobileFuel.Udid.find());
+        this.set('udid', MobileGas.Udid.find());
 
-        if (MobileFuel.RequestController.udid.length == 0) {
+        if (MobileGas.RequestController.udid.length == 0) {
             console.log('new udid');
 
             var udid = this.udidGenerator();
             var tempArray = [];
-            var udidModel = MobileFuel.Udid.createRecord({
+            var udidModel = MobileGas.Udid.createRecord({
                 udid: udid
             });
 

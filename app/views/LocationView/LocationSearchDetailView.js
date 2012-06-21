@@ -2,19 +2,19 @@
 // The M-Project - Mobile HTML5 Application Framework
 // Generated with: Espresso 
 //
-// Project: MobileFuel
+// Project: MobileGas
 // View: LocationSearchDetailView
 // ==========================================================================
 m_require('app/views/TabBar.js');
 m_require('app/views/LocationView/LocationSearchDetailListViewTemplate.js');
 
 
-MobileFuel.LocationSearchDetailView = M.PageView.design({
+MobileGas.LocationSearchDetailView = M.PageView.design({
 
     /* Use the 'events' property to bind events like 'pageshow' */
     events: {
         pageshow: {
-            target: MobileFuel.LocationSearchDetailController,
+            target: MobileGas.LocationSearchDetailController,
             action: 'init'
         }
     },
@@ -34,7 +34,7 @@ MobileFuel.LocationSearchDetailView = M.PageView.design({
             events: {
                 tap: {
                     action: function() {
-                        MobileFuel.LocationSearchDetailController.setFavorit();
+                        MobileGas.LocationSearchDetailController.setFavorit();
                     }
                 }
             }
@@ -56,7 +56,7 @@ MobileFuel.LocationSearchDetailView = M.PageView.design({
         label: M.LabelView.design({
             anchorLocation: M.CENTER,
             contentBinding: {
-                target: MobileFuel.LocationSearchDetailController,
+                target: MobileGas.LocationSearchDetailController,
                 property: 'headerName'
             },
             value: 'Toolbar'
@@ -67,16 +67,16 @@ MobileFuel.LocationSearchDetailView = M.PageView.design({
     content: M.ScrollView.design({
         childViews: 'stationList',
         stationList: M.ListView.design({
-            listItemTemplateView:MobileFuel.LocationSearchDetailListViewTemplate,
+            listItemTemplateView:MobileGas.LocationSearchDetailListViewTemplate,
             contentBinding: {
-                target: MobileFuel.LocationSearchDetailController,
+                target: MobileGas.LocationSearchDetailController,
                 property: 'fuelsList'
             }
 
         })
     }),
 
-    tabBar : MobileFuel.TabBar
+    tabBar : MobileGas.TabBar
 
 })
     ;

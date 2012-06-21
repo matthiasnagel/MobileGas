@@ -2,31 +2,31 @@
 // The M-Project - Mobile HTML5 Application Framework
 // Generated with: Espresso 
 //
-// Project: MobileFuel
+// Project: MobileGas
 // ==========================================================================
 
-var MobileFuel  = MobileFuel || {};
+var MobileGas  = MobileGas || {};
 
-MobileFuel.app = M.Application.design({
+MobileGas.app = M.Application.design({
 
     /* Define the entry/start page of your app. This property must be provided! */
     entryPage : 'searchView',
 
-    searchView: MobileFuel.SearchView,
-    locationSearchView: MobileFuel.LocationSearchView,
-    favoritesView : MobileFuel.FavoritesView,
-    optionsView: MobileFuel.OptionsView,
+    searchView: MobileGas.SearchView,
+    locationSearchView: MobileGas.LocationSearchView,
+    favoritesView : MobileGas.FavoritesView,
+    optionsView: MobileGas.OptionsView,
 
-    searchBrandView: MobileFuel.BrandView,
-    searchFuelView: MobileFuel.FuelView,
-    searchRadiusView: MobileFuel.RadiusView,
-    searchModeView: MobileFuel.ModeView,
-    searchDisplayModeView: MobileFuel.DisplayModeView,
+    searchBrandView: MobileGas.BrandView,
+    searchFuelView: MobileGas.FuelView,
+    searchRadiusView: MobileGas.RadiusView,
+    searchModeView: MobileGas.ModeView,
+    searchDisplayModeView: MobileGas.DisplayModeView,
 
-    locationSearchDetailView: MobileFuel.LocationSearchDetailView,
-    fuelModifyView: MobileFuel.FuelModifyView,
+    locationSearchDetailView: MobileGas.LocationSearchDetailView,
+    fuelModifyView: MobileGas.FuelModifyView,
 
-    reportingPage: MobileFuel.ReportStationView,
-    singleBrandPage: MobileFuel.SingleBrandListView,
-    resultsPage: MobileFuel.SearchResultsView
+    reportingPage: MobileGas.ReportStationView,
+    singleBrandPage: MobileGas.SingleBrandListView,
+    resultsPage: MobileGas.SearchResultsView
 });

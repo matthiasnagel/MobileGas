@@ -2,12 +2,12 @@
 // The M-Project - Mobile HTML5 Application Framework
 // Generated with: Espresso 
 //
-// Project: MobileFuel
+// Project: MobileGas
 // View: SearchResultsView
 // ==========================================================================
 m_require('app/views/SearchViews/SearchResultsListItemTemplate.js');
 
-MobileFuel.SearchResultsView = M.PageView.design({
+MobileGas.SearchResultsView = M.PageView.design({
 
     
     cssClass: 'SearchResultsView',
@@ -23,15 +23,15 @@ MobileFuel.SearchResultsView = M.PageView.design({
     content: M.ScrollView.design({
         childViews: 'resultList',
         resultList: M.ListView.design({
-            listItemTemplateView:MobileFuel.SearchResultsListItemTemplate,
+            listItemTemplateView:MobileGas.SearchResultsListItemTemplate,
             contentBinding: {
-                target: MobileFuel.SearchController,
+                target: MobileGas.SearchController,
                 property: 'results'
             }
         })
     }),
 
-    tabBar : MobileFuel.TabBar
+    tabBar : MobileGas.TabBar
 
 });
 

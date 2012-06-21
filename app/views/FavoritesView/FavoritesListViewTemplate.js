@@ -2,17 +2,17 @@
 // The M-Project - Mobile HTML5 Application Framework
 // Generated with: Espresso 
 //
-// Project: MobileFuel
+// Project: MobileGas
 // View: FavoritesListViewTemplate
 // ==========================================================================
 
-MobileFuel.FavoritesListViewTemplate = M.ListItemView.design({
+MobileGas.FavoritesListViewTemplate = M.ListItemView.design({
 
     childViews: 'stationname adress plz city',
 
     events: {
         tap: {
-            target: MobileFuel.FavoriteController,
+            target: MobileGas.FavoriteController,
             action:'favoriteItemClicked'
         }
     },

@@ -755,3 +755,19 @@ a.ui-link-inherit {
     font-size: 14px;
     float: left;
 }
+
+[data-icon=search] .ui-icon {
+    background: url("images/Search.png") no-repeat 50% 50% transparent;
+}
+
+[data-icon=location] .ui-icon {
+    background: url("images/Location.png") no-repeat 50% 50% transparent;
+}
+
+[data-icon=favorit] .ui-icon {
+    background: url("images/Star.png") no-repeat 50% 50% transparent;
+}
+
+[data-icon=settings] .ui-icon {
+    background: url("images/Keychain.png") no-repeat 50% 50% transparent;
+}
