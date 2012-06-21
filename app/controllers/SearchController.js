@@ -53,7 +53,11 @@ MobileFuel.SearchController = M.Controller.extend({
             $.each(MobileFuel.SearchRequestModel.find(), function(key, val) {
                 previousSearchModel = val;
                 if (previousSearchModel.record.brands) {
+                    var string = '';
+                    $.each(previousSearchModel.record.brands,function(brand){
+                        string += brand.label;
 
+                    })
                 }
                 that.marken.chosen = previousSearchModel.record.brands;
                 that.spritarten.chosen = previousSearchModel.record.fuels;
