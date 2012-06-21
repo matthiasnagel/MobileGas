@@ -9,17 +9,58 @@
 MobileFuel.SearchResultsListItemTemplate = M.ListItemView.design({
 
     childViews: 'stationname adress plz city',
-    isSelectable: YES,
 
     events: {
         tap: {
-            target: MobileFuel.ListItemController,
-            action:'resultStationClicked'
+            target: MobileFuel.FavoriteController,
+            action:'favoriteItemClicked'
         }
     },
 
     stationname: M.LabelView.design({
-        valuePattern: '<%= brandName %>'
+        computedValue: {
+            valuePattern: '<%= brand %>',
+            operation: function(v) {
+                var brandname = '';
+
+                if (v == '0')
+                    brandname = 'Alle';
+                else if (v == '1')
+                    brandname = 'Agip';
+                else if (v == '2')
+                    brandname = 'Aral';
+                else if (v == '3')
+                    brandname = 'AVIA';
+                else if (v == '4')
+                    brandname = 'bft';
+                else if (v == '5')
+                    brandname = 'Esso';
+                else if (v == '6')
+                    brandname = 'Jet';
+                else if (v == '7')
+                    brandname = 'OIL!';
+                else if (v == '8')
+                    brandname = 'OMV';
+                else if (v == '9')
+                    brandname = 'Orlen';
+                else if (v == '10')
+                    brandname = 'Q!';
+                else if (v == '11')
+                    brandname = 'Shell';
+                else if (v == '12')
+                    brandname = 'Star';
+                else if (v == '13')
+                    brandname = 'Tamoil';
+                else if (v == '14')
+                    brandname = 'TOTAL';
+                else if (v == '15')
+                    brandname = 'Westfalen';
+                else if (v == '16')
+                    brandname = 'Sonstige';
+
+                return brandname;
+            }
+        }
     }),
 
     adress: M.LabelView.design({

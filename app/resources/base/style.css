@@ -32,7 +32,7 @@ p.ui-annotation-message {
 }
 
 .searchView .ui-listview {
-    margin: 0px -15px 0px -15px;
+    margin: -15px -15px 0px -15px;
 }
 
 .ui-bar-a {
@@ -681,6 +681,10 @@ a.ui-link-inherit {
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     color: #fff;
+}
+
+.price_current:last-letter {
+
 }
 
 .currency {
