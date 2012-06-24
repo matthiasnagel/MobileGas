@@ -1,12 +1,12 @@
 @font-face {
-    font-family: DS-Digital;
-    local: DS-Digital;
-    src: url(/DS-DIGI.TTF);
+    font-family: Digital-7;
+    local: Digital-7;
+    src: url("digital-7.ttf");
 }
 
 .map {
     width: 100%;
-    height: 372px;
+    height: 337px;
 }
 
 .ui-loader {
@@ -672,7 +672,7 @@ a.ui-link-inherit {
     margin-bottom: 5px;
     float: left;
     position: relative;
-    font-family: DS-Digital;
+    font-family: Digital-7,Times,serif;
     background-color: #111;
     -webkit-border-top-left-radius: 5px;
     -webkit-border-bottom-left-radius: 5px;
@@ -696,7 +696,7 @@ a.ui-link-inherit {
     float: left;
     display: block;
     position: relative;
-    font-family: DS-Digital;
+    font-family: Digital-7,Times,serif;
     background-color: #111;
     -webkit-border-top-right-radius: 5px;
     -webkit-border-bottom-right-radius: 5px;
@@ -756,12 +756,12 @@ a.ui-link-inherit {
     float: left;
 }
 
-[data-icon=search] .ui-icon {
-    background: url("images/Search.png") no-repeat 50% 50% transparent;
-}
-
 [data-icon=location] .ui-icon {
     background: url("images/Location.png") no-repeat 50% 50% transparent;
+}
+
+[data-icon=search] .ui-icon {
+    background: url("images/Loupe.png") no-repeat 50% 50% transparent;
 }
 
 [data-icon=favorit] .ui-icon {
