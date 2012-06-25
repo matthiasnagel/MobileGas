@@ -208,15 +208,15 @@ MobileGas.SearchController = M.Controller.extend({
             //$station = $(this).find('station');
             //console.log($station.find('stationname').text());
 
+
+
+
             var that = $(this);
-            $.getJSON('brands.json',
-                function(data) {
-                    $.each(data, function(key, val) {
-                        if (val.id.toString() == that.attr('brand')) {
-                            stations.push(MobileGas.Station.createRecord({
+
+
+            stations.push(MobileGas.Station.createRecord({
                                 id:that.attr('id'),
                                 brand:that.attr('brand'),
-                                brandName:val.title.toString(),
                                 stationname:that.find('stationname').text(),
                                 country:that.find('country').text(),
                                 adress:that.find('adress').text(),
@@ -231,9 +231,7 @@ MobileGas.SearchController = M.Controller.extend({
                                     update:that.find('fuel').attr('update')
                                 })
                             }));
-                        }
-                    });
-                });
+            
         })
 
 
