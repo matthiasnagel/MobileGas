@@ -51,7 +51,7 @@ MobileGas.FuelViewController = M.Controller.extend({
         var selectionList = M.ViewManager.getView('searchFuelView', 'fuelSelection');
         var selection = selectionList.getSelection(YES);
         if (selection.length == 0) {
-            return 'Alle';//alle kraftstoffe einbauen
+            return [{value:0,name:'Alle'}];//alle kraftstoffe einbauen
         } else {
             var array=[] ;
             for (var i in selection) {

@@ -27,7 +27,7 @@ MobileGas.ReportStationView = M.PageView.design({
     }),
 
     content: M.ScrollView.design({//
-        childViews: 'grid gpsSwitcher zipCodeTextfield streetTextField cityTextField sendButton',
+        childViews: 'grid grid2 zipCodeTextfield streetTextField cityTextField sendButton',
 
         grid: M.GridView.design({
 
@@ -36,6 +36,7 @@ MobileGas.ReportStationView = M.PageView.design({
             layout: M.TWO_COLUMNS,
 
             button: M.ButtonView.design({
+
                 value: 'Marke:',
                 events:{
                     tap:{
@@ -46,6 +47,7 @@ MobileGas.ReportStationView = M.PageView.design({
             }),
 
             label:M.LabelView.design({
+                cssClass:'markenLabel',
                 value:'Bitte Wählen',
                 computedValue:{
                     contentBinding: {
@@ -54,8 +56,8 @@ MobileGas.ReportStationView = M.PageView.design({
                     },
                     value:'Bitte Wählen',
                     operation: function(v) {
-                        console.log('Computed Value:'+v);
-                        if(v.label){
+                        console.log('Computed Value:' + v);
+                        if (v.label) {
                             v = v.label;
                         }
                         return v;
@@ -66,33 +68,47 @@ MobileGas.ReportStationView = M.PageView.design({
 
         }),
 
+        grid2: M.GridView.design({
 
+            childViews: 'gpstext gpsSwitcher',
 
+            
 
-        gpsSwitcher:M.ButtonGroupView.design({
-            /* configure the button group as needed */
-            direction: M.HORIZONTAL,
+            layout: M.TWO_COLUMNS,
 
-            /* add event listener for the 'change' event */
-            events: {
-                change: {
-                    target: MobileGas.ReportStationViewController,
-                    action: 'toggleGPS'
-                }
-            },
-
-            /* add the child views (of type M.ButtonView) */
-            childViews: 'onButton offButton',
-
-            onButton: M.ButtonView.design({
-                value: 'ON'
-
+            gpstext:M.LabelView.design({
+                value:'GPS:'
             }),
 
-            offButton: M.ButtonView.design({
-                value: 'OFF'
+
+            gpsSwitcher:M.ButtonGroupView.design({
+                /* configure the button group as needed */
+                direction: M.HORIZONTAL,
+
+                /* add event listener for the 'change' event */
+                events: {
+                    change: {
+                        target: MobileGas.ReportStationViewController,
+                        action: 'toggleGPS'
+                    }
+                },
+
+                /* add the child views (of type M.ButtonView) */
+                childViews: 'onButton offButton',
+
+                onButton: M.ButtonView.design({
+                    value: 'ON'
+
+                }),
+
+                offButton: M.ButtonView.design({
+                    value: 'OFF'
+                })
             })
+
         }),
+
+
 
         streetTextField: M.TextFieldView.design({
             label:'Straße:',

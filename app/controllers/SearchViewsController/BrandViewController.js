@@ -35,6 +35,12 @@ MobileGas.BrandViewController = M.Controller.extend({
         console.log("done");
     },
 
+    setSelection:function(array){
+        var selectionList = M.ViewManager.getView('searchBrandView', 'brandSelection');
+        selectionList.setSelection(array);
+        console.log(selectionList.getSelection(YES));
+    },
+
     getSelection: function() {
         var selectionList = M.ViewManager.getView('searchBrandView', 'brandSelection');
         var selection = selectionList.getSelection(YES);
@@ -59,7 +65,7 @@ MobileGas.BrandViewController = M.Controller.extend({
         var selection = selectionList.getSelection(YES);
 
         if (selection.length == 0) {
-            return 'Alle';//0 für alle brands
+            return [{value:0,name:'Alle'}];//0 für alle brands
         } else {
             var array = [];
             var string = '';

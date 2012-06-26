@@ -50,17 +50,28 @@ MobileGas.SearchController = M.Controller.extend({
 
             var previousSearchModel;
             var that = this;
+            $.each(MobileGas.SearchRequestModel.find(), function(key, val) {console.log(key+ val);
+            }),
+            _.each(MobileGas.SearchRequestModel.find(), function(key, val) {
+                console.log(key+ val);
+
+            }),
+
+
             $.each(MobileGas.SearchRequestModel.find(), function(key, val) {
+
+
                 previousSearchModel = val;
 
                 if (previousSearchModel.record.brands) {
                     var string = '';
-                    console.log(previousSearchModel.record.brands[0].name);
-                    _.each(previousSearchModel.record.brands,function(brand){
-                        console.log(brand.name);
-                        string += brand.name+';';
+                    var array = [];
+                    $.each(previousSearchModel.record.brands,function(key,val){
+                        string += val.name+';';
+                        array.push(Number(val.value));
 
                     })
+                    console.log(array);
                     string = string.substring(0,string.length-1);
                     if(string.length > 30){
                         string = string.substring(0,30)+';...';
@@ -70,9 +81,9 @@ MobileGas.SearchController = M.Controller.extend({
 
                 if (previousSearchModel.record.fuels) {
                     var string = '';
-                    _.each(previousSearchModel.record.fuels,function(fuel){
-                        console.log(fuel);
-                        string += fuel.name+';';
+                    $.each(previousSearchModel.record.fuels,function(key,val){
+                    console.log(val);
+                        string += val.name+';';
 
                     })
                     string = string.substring(0,string.length-1);
@@ -87,9 +98,12 @@ MobileGas.SearchController = M.Controller.extend({
                 if (previousSearchModel.record.zipcode == -1) {
                     console.log("-1");
                     that.suchmodus.chosen = "Via GPS";
+                    MobileGas.ModeViewController.currentLocation();
                 } else {
                     console.log("zipcode");
                     that.suchmodus.chosen = previousSearchModel.record.zipcode;
+                    MobileGas.ModeViewController.set('plzValue',previousSearchModel.record.zipcode);
+                    MobileGas.ModeViewController.viaPlz();
                 }
 
 

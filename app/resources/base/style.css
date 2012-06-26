@@ -771,3 +771,12 @@ a.ui-link-inherit {
 [data-icon=settings] .ui-icon {
     background: url("images/Keychain.png") no-repeat 50% 50% transparent;
 }
+
+.markenLabel{
+    padding: 17px 0px 0px 0px;
+    margin-left: 15px;
+}
+
+.grid2{
+    padding: 10px 0px;
+}
